@@ -40,6 +40,11 @@
                 font-weight: 600;
                 text-transform: uppercase;
                 cursor: pointer;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
             }
 
         }
@@ -96,6 +101,7 @@
 
         }
     }
+
     &.sticky-header {
         position: sticky;
         transform: translateY(-60%);
@@ -110,8 +116,9 @@
     0% {
         transform: translateY(-60%);
     }
+
     100% {
         transform: translateY(0%);
     }
-    
+
 }
