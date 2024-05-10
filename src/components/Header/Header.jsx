@@ -7,10 +7,12 @@ import { CgShoppingCart } from "react-icons/cg";
 import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import { Link } from "react-router-dom";
+import Search from "./Search/Search";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const handleScroll = (e) => {
     const offset = window.scrollY;
     if (offset > 200) {
@@ -34,7 +36,7 @@ const Header = () => {
         </ul>
         <div className="center">SHOPLITE.</div>
         <div className="right">
-          <TbSearch />
+          <TbSearch onClick={()=> setShowSearch(true)}/>
           <AiOutlineHeart />
           <span className="cart-icon">
             <CgShoppingCart onClick={()=> setShowCart(true)}/>
@@ -44,6 +46,7 @@ const Header = () => {
       </div>
     </header>
     {showCart && <Cart setShowCart={setShowCart}/>}
+    {showSearch && <Search setShowSearch={setShowSearch}/>}
     </>
   );
 };
