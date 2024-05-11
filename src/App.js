@@ -9,26 +9,33 @@ import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 import { AppContext } from "./utils/context";
 import Newsletter from "./components/Footer/Newsletter/Newsletter";
+import About from "./components/About/About";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Home />
+        element:<><Header />
+        <Home />
+        </> 
     },
     {
         path: '/category/:id',
-        element: <Category />
+        element:<><Header /> <Category /></>
     },
     {
         path: '/product/:id',
-        element: <SingleProduct />
+        element: <><Header /><SingleProduct /></>
+    },
+    {
+        path: '/about',
+        element: <><Header /><About /></>
     },
 
 ])
 function App() {
     return <div>
         <AppContext>
-        <Header />
+        
         <RouterProvider router={router}>
         </RouterProvider>
         <Newsletter/>

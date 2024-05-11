@@ -1,26 +1,12 @@
 import Product from "./Product/Product";
 import "./Products.scss";
 
-const Products = ({ isCategoryPage,headingText }) => {
+const Products = ({ isCategoryPage, headingText, products }) => {
   return (
     <div className="products-container">
       {!isCategoryPage && <div className="sec-heading">{headingText}</div>}
       <div className="products">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {products?.map(prod => (<Product key={prod.id} product={prod} />))}
       </div>
     </div>
   );

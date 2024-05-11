@@ -10,6 +10,12 @@
         @include md {
             max-width: 1200px;
         }
+
+        .category-no-product{
+            margin-top: 30px;
+            display: inline-block;
+            color: rgb(169, 169, 169);
+        }
     }
     .category-title {
         font-size: 24px;

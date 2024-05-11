@@ -12,27 +12,49 @@ import {
 } from "react-icons/fa";
 
 import "./SingleProduct.scss";
+import { useParams } from "react-router-dom";
+import { useFetchData } from "../../hooks/fetchData";
+import { useState } from "react";
 const SingleProduct = () => {
+  const {id} = useParams()
+  const products = useFetchData(`/api/products?populate=*&[filters][id]=${id}`)
+
+  const [cartCount,setCartCount] = useState(0)
+
+  const decCartCount = ()=>{
+    if(cartCount>0){
+      setCartCount(prev=>prev-1)
+    }
+  }
+
+  const incCartCount = ()=>{
+      setCartCount(prev=>prev+1)
+  }
+
+  if(!products || products.length <= 0) {
+    return 
+  }
+  const data= products[0].attributes
   return (
     <div className="single-product-main-content">
       <div className="layout">
         <div className="single-product-page">
-            <div className="left"><img src={prod} alt="product"/></div>
+            <div className="left"><img src={process.env.REACT_APP_BASE_URL + data?.image?.data?.attributes?.url} alt="product"/></div>
             <div className="right">
-                <span className="name"> Product Name</span>
-                <span className="price"> &#8377; 99999</span>
-                <span className="desc"> Product Description </span>
+                <span className="name"> {data?.title}</span>
+                <span className="price"> &#8377; {data?.price}</span>
+                <span className="desc">{data.desc} </span>
                 <div className="cart-buttons">
                   <div className="quantity-buttons">
-                    <span>-</span>
-                    <span>5</span>
-                    <span>+</span>
+                    <span onClick={decCartCount} className={`${cartCount?'':'disabled'}`}>-</span>
+                    <span>{cartCount}</span>
+                    <span onClick={incCartCount}>+</span>
                   </div>
                   <button className="add-to-cart-button"><FaCartPlus/>ADD TO CART</button>
                 </div>
                 <span className="divider"></span>
                 <div className="info-item">
-                  <span className="text-bold">Category: <span>Headphones</span></span>
+                  <span className="text-bold">Category: <span>{data?.categories?.data?.[0].attributes?.title}</span></span>
                   <span className="text-bold">
                                 Share:
                                 <span className="social-icons">
@@ -48,7 +70,7 @@ const SingleProduct = () => {
                 </div>
             </div>
         </div>
-        <RelatedProducts/>
+        <RelatedProducts productId={id} categoryId={data?.categories?.data?.[0]?.id}/>
       </div>
     </div>
   );

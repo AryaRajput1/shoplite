@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.cfa5cec2.css",
-    "main.js": "/static/js/main.98b6de97.js",
+    "main.css": "/static/css/main.29332beb.css",
+    "main.js": "/static/js/main.9b499a2f.js",
     "static/media/cat-2.jpg": "/static/media/cat-2.c783bc351239091a6ba7.jpg",
     "static/media/cat-3.jpg": "/static/media/cat-3.a8441fd9d3326934ed92.jpg",
     "static/media/cat-1.jpg": "/static/media/cat-1.aa15048c6d1dc6572a81.jpg",
     "static/media/cat-4.jpg": "/static/media/cat-4.427b423a2e66b77f3ba8.jpg",
-    "static/media/banner-img.png": "/static/media/banner-img.0412d66280a0273effa2.png",
     "static/media/newsletter-bg.jpeg": "/static/media/newsletter-bg.b6f22313149bdbb35069.jpeg",
     "static/media/headphone-prod-1.webp": "/static/media/headphone-prod-1.49810a1a193aa5efb36b.webp",
+    "static/media/headphone-prod-4.webp": "/static/media/headphone-prod-4.e29d57f5084215030f91.webp",
+    "static/media/earbuds-prod-2.webp": "/static/media/earbuds-prod-2.67477bdbf3f67b3f559d.webp",
+    "static/media/earbuds-prod-5.webp": "/static/media/earbuds-prod-5.2f395e34d2513bcb9a77.webp",
     "index.html": "/index.html",
-    "main.cfa5cec2.css.map": "/static/css/main.cfa5cec2.css.map",
-    "main.98b6de97.js.map": "/static/js/main.98b6de97.js.map"
+    "main.29332beb.css.map": "/static/css/main.29332beb.css.map",
+    "main.9b499a2f.js.map": "/static/js/main.9b499a2f.js.map"
   },
   "entrypoints": [
-    "static/css/main.cfa5cec2.css",
-    "static/js/main.98b6de97.js"
+    "static/css/main.29332beb.css",
+    "static/js/main.9b499a2f.js"
   ]
 }

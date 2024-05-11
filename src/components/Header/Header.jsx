@@ -6,13 +6,14 @@ import { CgShoppingCart } from "react-icons/cg";
 
 import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
-import { Link } from "react-router-dom";
 import Search from "./Search/Search";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const navigate = useNavigate()
   const handleScroll = (e) => {
     const offset = window.scrollY;
     if (offset > 200) {
@@ -30,11 +31,11 @@ const Header = () => {
     <header className={`main-header ${scrolled ? "sticky-header" : ""}`}>
       <div className="header-content">
         <ul className="left">
-          <li><a href={'/'}>Home</a></li>
-          <li><a href={'/category/1'}>Category</a></li>
-          <li><a href={'/product/1'}>Product</a></li>
+          <li onClick={()=>navigate('/')}>Home</li>
+          <li onClick={()=>navigate('/about')}>About</li>
+          <li onClick={()=>navigate('/category/1')}>Product</li>
         </ul>
-        <div className="center">SHOPLITE.</div>
+        <div className="center" onClick={()=>navigate('/')}>SHOPLITE.</div>
         <div className="right">
           <TbSearch onClick={()=> setShowSearch(true)}/>
           <AiOutlineHeart />
