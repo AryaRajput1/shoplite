@@ -5,7 +5,7 @@ export const useFetchData = (api) => {
   const [data, setData] = useState([]);
   useEffect(() => {
     makingApiCall();
-  },[]);
+  },[api]);
 
   const makingApiCall =async () => {
     const response =await fetchDataFromApi(api);

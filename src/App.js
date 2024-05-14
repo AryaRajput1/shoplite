@@ -10,25 +10,36 @@ import Footer from "./components/Footer/Footer"
 import { AppContext } from "./utils/context";
 import Newsletter from "./components/Footer/Newsletter/Newsletter";
 import About from "./components/About/About";
+import Success from "./components/Success/Success";
+import Subscribe from "./components/Subscribe/Subscribe";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element:<><Header />
         <Home />
+        <Newsletter/>
         </> 
     },
     {
         path: '/category/:id',
-        element:<><Header /> <Category /></>
+        element:<><Header /> <Category /><Newsletter/></>
     },
     {
         path: '/product/:id',
-        element: <><Header /><SingleProduct /></>
+        element: <><Header /><SingleProduct /><Newsletter/></>
     },
     {
         path: '/about',
-        element: <><Header /><About /></>
+        element: <><Header /><About /><Newsletter/></>
+    },
+    {
+        path: '/success',
+        element: <><Header /><Success /><Newsletter/></>
+    },
+    {
+        path: '/subscribe',
+        element: <><Header /><Subscribe /><Newsletter/></>
     },
 
 ])
@@ -38,7 +49,6 @@ function App() {
         
         <RouterProvider router={router}>
         </RouterProvider>
-        <Newsletter/>
         <Footer />
         </AppContext>
         </div>;

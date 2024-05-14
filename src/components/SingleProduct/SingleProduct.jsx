@@ -12,14 +12,23 @@ import {
 } from "react-icons/fa";
 
 import "./SingleProduct.scss";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useFetchData } from "../../hooks/fetchData";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import Context from "../../utils/context";
 const SingleProduct = () => {
   const {id} = useParams()
   const products = useFetchData(`/api/products?populate=*&[filters][id]=${id}`)
 
-  const [cartCount,setCartCount] = useState(0)
+  const location = useLocation()
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[location])
+
+  const {handleAddToCart} = useContext(Context)
+
+  const [cartCount,setCartCount] = useState(1)
 
   const decCartCount = ()=>{
     if(cartCount>0){
@@ -50,7 +59,10 @@ const SingleProduct = () => {
                     <span>{cartCount}</span>
                     <span onClick={incCartCount}>+</span>
                   </div>
-                  <button className="add-to-cart-button"><FaCartPlus/>ADD TO CART</button>
+                  <button className="add-to-cart-button" onClick={()=>{
+                    handleAddToCart( products[0],cartCount)
+                    setCartCount(1)
+                    }}><FaCartPlus/>ADD TO CART</button>
                 </div>
                 <span className="divider"></span>
                 <div className="info-item">

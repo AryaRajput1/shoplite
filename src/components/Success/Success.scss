@@ -1,0 +1,40 @@
+.order-success {
+  max-width: 800px;
+  margin: 40px auto;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  #my-canvas{
+    z-index: -11;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  h1,
+  p {
+    margin: 5px;
+  }
+  button {
+    outline: 0;
+    border: 0;
+    height: 50px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background: #8e2de2;
+    border-bottom: 3px solid #6516aa;
+    flex-grow: 1;
+  }
+}
