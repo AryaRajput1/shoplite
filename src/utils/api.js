@@ -8,8 +8,6 @@ const params = {
 
 export const fetchDataFromApi = async (url) => {
     try {
-
-        console.log('jj', process.env.REACT_APP_BASE_URL + url)
         const { data } = await axios.get(process.env.REACT_APP_BASE_URL + url, params)
         return data;
     } catch (error) {

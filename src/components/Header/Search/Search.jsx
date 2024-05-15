@@ -42,7 +42,7 @@ const Search = ({ setShowSearch }) => {
                         setShowSearch(false)
                       }}>
                             <div className="img-container">
-                                <img src={process.env.REACT_APP_BASE_URL+ item.attributes?.image?.data?.attributes?.url} alt="product"/>
+                                <img src={item.attributes?.image?.data?.attributes?.url} alt="product"/>
                             </div>
                             <div className="prod-details">
                                 <span className="name">{item.attributes.title}</span>

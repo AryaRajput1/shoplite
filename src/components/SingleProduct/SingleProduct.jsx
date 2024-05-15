@@ -48,7 +48,7 @@ const SingleProduct = () => {
     <div className="single-product-main-content">
       <div className="layout">
         <div className="single-product-page">
-            <div className="left"><img src={process.env.REACT_APP_BASE_URL + data?.image?.data?.attributes?.url} alt="product"/></div>
+            <div className="left"><img src={data?.image?.data?.attributes?.url} alt="product"/></div>
             <div className="right">
                 <span className="name"> {data?.title}</span>
                 <span className="price"> &#8377; {data?.price}</span>

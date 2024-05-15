@@ -13,7 +13,7 @@ const Banner = () => {
             const productImageArray = products?.map(product => product?.attributes?.image?.data?.attributes.url);
            const x =Math.floor(Math.random() * (productImageArray.length+1));
            console.log(productImageArray[x])
-            setCurrImg(process.env.REACT_APP_BASE_URL+productImageArray[x])
+            setCurrImg(productImageArray[x])
             },5000)
            return () => clearInterval(t1)
     },[products])

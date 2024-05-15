@@ -10,7 +10,7 @@ const ShopByCategory = ({categories}) => {
     return <div className="shop-by-category" >
         <div className="categories">
         {categories?.map((category) => (<div className="category" key={category.id}  onClick={()=> navigate(`/category/${category.id}`)}>
-                <img src={process.env.REACT_APP_BASE_URL+ category?.attributes.image?.data?.attributes.url} alt={category.title}/>
+                <img src={category?.attributes.image?.data?.attributes.url} alt={category.title}/>
             </div>)
         )}
         

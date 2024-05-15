@@ -7,7 +7,7 @@ const Product = ({product}) => {
   return (
     <div className="product-card" onClick={()=>navigate(`/product/${product.id}`)}>
       <div className="thumbnail">
-        <img src={process.env.REACT_APP_BASE_URL+ product.attributes.image.data.attributes.url} alt="Apple Watch" />
+        <img src={product.attributes.image.data.attributes.url} alt="Apple Watch" />
       </div>
       <div className="prod-details">
         <span className="name">{product.attributes.title}</span>
